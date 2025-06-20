@@ -1,0 +1,41 @@
+{
+  "resourceType": "NutritionOrder",
+  "status": "active",
+  "patient": {
+    "reference": "Patient/patient-123"
+  },
+  "oralDiet": {
+    "type": [
+      {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "386619000",
+            "display": "Low sodium diet"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "226406002",
+            "display": "High fiber diet"
+          }
+        ]
+      }
+    ],
+    "instruction": "Patient prefers fresh foods and avoids processed snacks."
+  },
+  "foodPreferenceModifier": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "226060007",
+          "display": "Vegetarian diet"
+        }
+      ]
+    }
+  ]
+}

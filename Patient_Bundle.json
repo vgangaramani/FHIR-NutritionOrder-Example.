@@ -1,0 +1,91 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-123",
+        "name": [
+          {
+            "family": "Doe",
+            "given": [
+              "John"
+            ]
+          }
+        ],
+        "birthDate": "1980-01-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-hypertension",
+        "subject": {
+          "reference": "Patient/patient-123"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertension"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-diabetes",
+        "subject": {
+          "reference": "Patient/patient-123"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Type 2 diabetes mellitus"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Goal",
+        "id": "goal-weightloss",
+        "subject": {
+          "reference": "Patient/patient-123"
+        },
+        "description": {
+          "text": "Lose 20 pounds by June"
+        },
+        "status": "active",
+        "target": [
+          {
+            "dueDate": "2025-06-01"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Goal"
+      }
+    }
+  ]
+}
